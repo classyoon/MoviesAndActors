@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		CAC306942C025E58009347C7 /* MoviesAndActorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */; };
-		CAC306962C025E58009347C7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306952C025E58009347C7 /* ContentView.swift */; };
-		CAC306982C025E58009347C7 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306972C025E58009347C7 /* Item.swift */; };
 		CAC3069A2C025E59009347C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC306992C025E59009347C7 /* Assets.xcassets */; };
 		CAC3069D2C025E59009347C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC3069C2C025E59009347C7 /* Preview Assets.xcassets */; };
 		CAC306A72C025E59009347C7 /* MoviesAndActorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306A62C025E59009347C7 /* MoviesAndActorsTests.swift */; };
 		CAC306B12C025E59009347C7 /* MoviesAndActorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306B02C025E59009347C7 /* MoviesAndActorsUITests.swift */; };
 		CAC306B32C025E59009347C7 /* MoviesAndActorsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306B22C025E59009347C7 /* MoviesAndActorsUITestsLaunchTests.swift */; };
+		CAC306C22C025E76009347C7 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306C12C025E76009347C7 /* Models.swift */; };
+		CAC306C42C026036009347C7 /* ActorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306C32C026036009347C7 /* ActorListView.swift */; };
+		CAC306C62C0261E5009347C7 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306C52C0261E5009347C7 /* MovieList.swift */; };
+		CAC306CA2C02650F009347C7 /* ActorsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306C92C02650F009347C7 /* ActorsPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +39,6 @@
 /* Begin PBXFileReference section */
 		CAC306902C025E58009347C7 /* MoviesAndActors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesAndActors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAndActorsApp.swift; sourceTree = "<group>"; };
-		CAC306952C025E58009347C7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CAC306972C025E58009347C7 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CAC306992C025E59009347C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CAC3069C2C025E59009347C7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CAC306A22C025E59009347C7 /* MoviesAndActorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAndActorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +46,10 @@
 		CAC306AC2C025E59009347C7 /* MoviesAndActorsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesAndActorsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC306B02C025E59009347C7 /* MoviesAndActorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAndActorsUITests.swift; sourceTree = "<group>"; };
 		CAC306B22C025E59009347C7 /* MoviesAndActorsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAndActorsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CAC306C12C025E76009347C7 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		CAC306C32C026036009347C7 /* ActorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorListView.swift; sourceTree = "<group>"; };
+		CAC306C52C0261E5009347C7 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
+		CAC306C92C02650F009347C7 /* ActorsPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorsPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */,
-				CAC306952C025E58009347C7 /* ContentView.swift */,
-				CAC306972C025E58009347C7 /* Item.swift */,
+				CAC306C12C025E76009347C7 /* Models.swift */,
+				CAC306C32C026036009347C7 /* ActorListView.swift */,
+				CAC306C52C0261E5009347C7 /* MovieList.swift */,
+				CAC306C92C02650F009347C7 /* ActorsPickerView.swift */,
 				CAC306992C025E59009347C7 /* Assets.xcassets */,
 				CAC3069B2C025E59009347C7 /* Preview Content */,
 			);
@@ -260,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC306962C025E58009347C7 /* ContentView.swift in Sources */,
-				CAC306982C025E58009347C7 /* Item.swift in Sources */,
 				CAC306942C025E58009347C7 /* MoviesAndActorsApp.swift in Sources */,
+				CAC306CA2C02650F009347C7 /* ActorsPickerView.swift in Sources */,
+				CAC306C22C025E76009347C7 /* Models.swift in Sources */,
+				CAC306C62C0261E5009347C7 /* MovieList.swift in Sources */,
+				CAC306C42C026036009347C7 /* ActorListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
