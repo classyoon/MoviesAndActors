@@ -11,16 +11,25 @@ struct ActorListView: View {
     @Environment (\.modelContext) var modelContext
     @Query private var actors : [Actor]
     var body: some View {
-        List {
-            ForEach(actors){ actor in
-                NavigationLink {
-                    ActorEditView(actor: actor)
-                } label: {
-                    Text(actor.name)
+        NavigationStack{
+            List {
+                ForEach(actors){ actor in
+                    NavigationLink {
+                        ActorEditView(actor: actor)
+                    } label: {
+                        Text(actor.name)
+                    }
+                    
+                    
                 }
-
-                
             }
+            .listStyle(.plain)
+            .navigationTitle("Actors")
+                .navigationTitle("Home view")
+                .toolbarBackground(.yellow,
+                                   for: .navigationBar)
+                .toolbarBackground(.visible,
+                                   for: .navigationBar)
         }
     }
 }

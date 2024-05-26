@@ -25,7 +25,7 @@ struct MoviesAndActorsApp: App {
 
     var body: some Scene {
         WindowGroup {
-           EmptyView()
+           MainView()
         }
         .modelContainer(sharedModelContainer)
     }
