@@ -22,6 +22,8 @@ class Movie {
 class Actor : Hashable {
     var name : String = ""
     var movies : [Movie]
+    @Attribute(.externalStorage) var imageData : Data?
+    
     init(name: String = "", movies : [Movie] = []) {
         self.name = name
         self.movies = movies

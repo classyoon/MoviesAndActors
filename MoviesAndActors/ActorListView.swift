@@ -23,7 +23,25 @@ struct ActorListView: View {
                             modelContext.delete(actor)
                         })
                     } label: {
-                        Text(actor.name)
+                        HStack{
+                            if let data = actor.imageData, let uiImage = UIImage(data: data) {
+                                  Image(uiImage: uiImage)
+                                      .resizable()
+                                      .scaledToFill()
+                                      .frame(width: 50, height: 50)
+                                      .clipShape(Circle())
+                              
+                              }else{
+                                  Image(systemName: "person")
+                                      .resizable()
+                                      .scaledToFill()
+                                      .frame(width: 50, height: 50)
+                                      .clipShape(Circle())
+                              }
+                            Text(actor.name)
+                          
+                        }
+                        
                     }
                     
                     
@@ -58,28 +76,58 @@ struct ActorListView: View {
         }
     }
 }
+import PhotosUI
 struct ActorEditView : View {
     @Bindable var actor : Actor
+    @State private var photosPickerItem : PhotosPickerItem?
+    @State private var profileImage : Image?
     var save : (Actor)->()
     var delete : (Actor)->()
     @Environment(\.dismiss) var dismiss
     var body: some View {
         Form {
-            
+            VStack {
+                PhotosPicker("Select avatar", selection: $photosPickerItem, matching: .images)
+                if let data = actor.imageData, let uiImage = UIImage(data: data) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                
+                }else{
+                    Image(systemName: "person")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 300, height: 300)
+                }
+                
+            }
+            .onChange(of: photosPickerItem) {
+                Task {
+                    if let data = try? await photosPickerItem?.loadTransferable(type: Data.self) {
+                        if let uiImage = UIImage(data: data) {
+                            profileImage = Image(uiImage: uiImage)
+                            actor.imageData = data
+                        }
+                    } else {
+                        print("Failed")
+                    }
+                }
+            }
             TextField("Type Actor Name", text: $actor.name)
             
-                Button(action: {
-                    save(actor)
-                    dismiss()
-                }, label: {
-                    Text("Save")
-                })
-                Button(action: {
-                    delete(actor)
-                    dismiss()
-                }, label: {
-                    Text("Delete")
-                })
+            Button(action: {
+                save(actor)
+                dismiss()
+            }, label: {
+                Text("Save")
+            })
+            Button(action: {
+                delete(actor)
+                dismiss()
+            }, label: {
+                Text("Delete")
+            })
             
             
         }.background(Color.yellow).scrollContentBackground(.hidden)
