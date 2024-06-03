@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CA92F1D52C03843100FFF3D7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1D42C03843100FFF3D7 /* MainView.swift */; };
 		CA92F1D72C03878600FFF3D7 /* MovieRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA92F1D62C03878600FFF3D7 /* MovieRowView.swift */; };
+		CAAA4F0C2C0D56CE008AA2B8 /* CardEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAA4F0A2C0D56CD008AA2B8 /* CardEditView.swift */; };
+		CAAA4F0D2C0D56CE008AA2B8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAA4F0B2C0D56CD008AA2B8 /* CameraView.swift */; };
 		CAC306942C025E58009347C7 /* MoviesAndActorsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */; };
 		CAC3069A2C025E59009347C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC306992C025E59009347C7 /* Assets.xcassets */; };
 		CAC3069D2C025E59009347C7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC3069C2C025E59009347C7 /* Preview Assets.xcassets */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		CA92F1D42C03843100FFF3D7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		CA92F1D62C03878600FFF3D7 /* MovieRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRowView.swift; sourceTree = "<group>"; };
+		CAAA4F0A2C0D56CD008AA2B8 /* CardEditView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEditView.swift; sourceTree = "<group>"; };
+		CAAA4F0B2C0D56CD008AA2B8 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		CAC306902C025E58009347C7 /* MoviesAndActors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoviesAndActors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAndActorsApp.swift; sourceTree = "<group>"; };
 		CAC306992C025E59009347C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CAAA4F0E2C0D56EF008AA2B8 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CAAA4F0B2C0D56CD008AA2B8 /* CameraView.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		CAC306872C025E58009347C7 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +119,8 @@
 				CAC306932C025E58009347C7 /* MoviesAndActorsApp.swift */,
 				CAC306C12C025E76009347C7 /* Models.swift */,
 				CAC306C32C026036009347C7 /* ActorListView.swift */,
+				CAAA4F0E2C0D56EF008AA2B8 /* Util */,
+				CAAA4F0A2C0D56CD008AA2B8 /* CardEditView.swift */,
 				CAC306C52C0261E5009347C7 /* MovieListView.swift */,
 				CA92F1D42C03843100FFF3D7 /* MainView.swift */,
 				CAC306C92C02650F009347C7 /* ActorsPickerView.swift */,
@@ -272,8 +286,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAA4F0C2C0D56CE008AA2B8 /* CardEditView.swift in Sources */,
 				CAC306942C025E58009347C7 /* MoviesAndActorsApp.swift in Sources */,
 				CA92F1D52C03843100FFF3D7 /* MainView.swift in Sources */,
+				CAAA4F0D2C0D56CE008AA2B8 /* CameraView.swift in Sources */,
 				CAC306CA2C02650F009347C7 /* ActorsPickerView.swift in Sources */,
 				CA92F1D72C03878600FFF3D7 /* MovieRowView.swift in Sources */,
 				CAC306C22C025E76009347C7 /* Models.swift in Sources */,
@@ -445,6 +461,7 @@
 				DEVELOPMENT_TEAM = 83Z22V6XMU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to use the camera for conveinece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -474,6 +491,7 @@
 				DEVELOPMENT_TEAM = 83Z22V6XMU;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to use the camera for conveinece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

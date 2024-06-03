@@ -84,6 +84,8 @@ struct ActorEditView : View {
     var save : (Actor)->()
     var delete : (Actor)->()
     @Environment(\.dismiss) var dismiss
+    @State private var sourceType : SourceType?
+    
     var body: some View {
         Form {
             VStack {
@@ -100,7 +102,12 @@ struct ActorEditView : View {
                         .scaledToFit()
                         .frame(width: 300, height: 300)
                 }
-                
+                Button {
+                    sourceType = .camera
+                } label: {
+                    Image(systemName: "camera.circle")
+                }
+
             }
             .onChange(of: photosPickerItem) {
                 Task {
@@ -130,7 +137,12 @@ struct ActorEditView : View {
             })
             
             
-        }.background(Color.yellow).scrollContentBackground(.hidden)
+        }
+        
+        .background(Color.yellow).scrollContentBackground(.hidden)
+        .sheet(item: $sourceType) { sourceType in
+            CameraView(sourceType: sourceType, imageData: $actor.imageData)
+        }
     }
 }
 #Preview {
